@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# easy-book
-This is a react practice~
-=======
 ## easy-book
 
 
