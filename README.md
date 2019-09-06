@@ -65,7 +65,8 @@ npm start
 ```
 
 
-##问题总结以及解决办法：
+## 问题总结以及解决办法：
+
 1、css样式污染问题
 
 使用CSS Modules，详情见：![CSS Modules](https://segmentfault.com/a/1190000014722978)
@@ -87,5 +88,43 @@ import imgURL from './../images/photo.png';
 <img src={require('./../images/photo.png')} />
 ```
 
+3、使用动画
 
->>>>>>> ea20d118ebc67707f096f987be4c6a30eba0e83f
+安装：
+
+```
+npm install react-transition-group --save
+
+```
+
+引用：
+```
+import { CSSTransition } from 'react-transition-group'
+```
+用法：
+
+```
+<CSSTransition 
+    in={this.state.focus}   //用于判断是否出现的状态
+    timeout={2000}           //动画持续时间
+    classNames="slide"   //className值，防止重复
+>
+    <div>mengyun 呀~</div>
+</CSSTransition>
+
+```
+
+当动画执行时，会在作用动画的上一层下加几个class
+
+.slide-enter{
+    transition: all .2s ease-out;
+}
+.slide-enter-active{
+    width: 280px;
+}
+.slide-exit{
+    transition: all .2s ease-out;
+}
+.slide-exit-active{
+    width: 160px;
+}

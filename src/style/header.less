@@ -17,44 +17,125 @@
             .icon-right{
                 margin-right: 5px;
             }
-        }
-        .home{
-            color: #ea6f5a;
-        }
-        .download{
-            margin-left: 60px;
-            color: #333;
-        }
-        .search{
-            margin-left: 50px;
-            .search-input{
-                outline: 0;
-                border: 0;
-                background: #eee;
-                font-size: 14px;
-                padding: 12px 30px;
-                border-radius: 20px;
-                width: 160px;
-                box-sizing: border-box;
+            &.home{
+                color: #ea6f5a;
+            }
+            &.download{
+                margin-left: 60px;
+                color: #333;
+            }
+            &.search{
+                margin-left: 50px;
+                position: relative;
+                .search-input{
+                    outline: 0;
+                    border: 0;
+                    background: #eee;
+                    font-size: 14px;
+                    padding: 12px 40px 12px 20px;
+                    border-radius: 20px;
+                    width: 180px;
+                    box-sizing: border-box;
+                    &.slide-enter{
+                        transition: all .2s ease-out;
+                    }
+                    &.slide-enter-active{
+                        width: 280px;
+                    }
+                    &.slide-exit{
+                        transition: all .2s ease-out;
+                    }
+                    &.slide-exit-active{
+                        width: 180px;
+                    }
+                    &.focused{
+                        width: 280px;
+                    }
+                }
+                .search-icon {
+                    position: absolute;
+                    right: 10px;
+                    height: 20px;
+                    width: 20px;
+                    line-height: 20px;
+                    text-align: center;
+                    top: 17px;
+                    border-radius: 50%;
+                    padding: 3px;
+                    &.focused{
+                        color:#fff;
+                        background: #727272;
+                    }
+                }
+                .search-tips-box{
+                    position: absolute;
+                    background-color: #fff;
+                    box-shadow: 0 0 8px rgba(0,0,0,.2);
+                    width: 250px;
+                    left: 0;
+                    top: 56px;
+                    border-radius: 4px;
+                    display: none;
+                    &.show{
+                        display: block;
+                    }
+                    .search-tips{
+                        box-sizing: border-box;
+                        padding: 10px;
+                        .search-tips-top{
+                            font-size: 14px;
+                            color:#969696;
+                            // &.clearfix:after,&.clearfix:before{
+                            //     content: " ";
+                            //     display: table;
+                            // }
+                            .hot-search{
+                                float: left;
+                                line-height: 20px;
+                            }
+                            .change-item{
+                                float: right;
+                                line-height: 20px;
+                            }
+                        }
+                        .search-tips-bottom{
+                            font-size: 0;
+                            margin-top: 20px;
+                            .search-item{
+                                display: inline-block;
+                                margin-right: 10px;
+                                line-height: 28px;
+                                a{
+                                    padding: 2px 6px;
+                                    font-size: 12px;
+                                    color: #787878;
+                                    border: 1px solid #ddd;
+                                    border-radius: 3px;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
+        
         .right{
             float: right;
-        }
-        .login{
-            color: #969696;
-            font-size: 15px;
-            margin: 0 6px 0 10px;
-        }
-        .zuan{
-            margin: -2px 30px 0 20px;
-            img{
-                height: 25px;
-                vertical-align: middle;
+            &.login{
+                color: #969696;
+                font-size: 15px;
+                margin: 0 6px 0 10px;
             }
-        }
-        .word{
-            color: #969696;
+            &.zuan{
+                margin: -2px 30px 0 20px;
+                img{
+                    height: 25px;
+                    vertical-align: middle;
+                }
+            }
+            &.word{
+                color: #969696;
+            }
         }
     }
     .register{

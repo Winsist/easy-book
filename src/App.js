@@ -1,19 +1,16 @@
-import React, { Component ,Fragment} from 'react';
+import React from 'react';
 import Header from './pages/common/header'
+import store from './store'
+import { Provider } from 'react-redux'
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
-  }
-  render() { 
-    return ( 
-      <Fragment>
+
+function App(){
+  return ( 
+      <Provider store={store}>
         <Header />
-      </Fragment>
+      </Provider>
      );
-  }
 }
- 
+  
 export default App;
 
