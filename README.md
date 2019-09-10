@@ -114,7 +114,7 @@ import { CSSTransition } from 'react-transition-group'
 
 ```
 
-当动画执行时，会在作用动画的上一层下加几个class
+当动画执行时，会在作用动画的上一层下加几个class,本身也可以
 
 .slide-enter{
     transition: all .2s ease-out;
@@ -128,3 +128,8 @@ import { CSSTransition } from 'react-transition-group'
 .slide-exit-active{
     width: 160px;
 }
+
+
+4、避免无意义的axios请求，性能优化
+
+本来搜索框点击一次，发一次请求，点击一次，发一次请求，但是实际上，点击第一次的时候发送请求，第二次点的时候我不希望再发送这种没有必要的请求了，那就在聚焦的时候，传一个list,如果list.length===0,那么就发送请求。
