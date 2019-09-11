@@ -1,0 +1,1 @@
+export const GETARTICLE_LIST = 'home/getarticle_list';

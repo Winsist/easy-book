@@ -19,7 +19,7 @@ export const blurInputAction = ()=> ({
 
 export const getList = ()=>{
     return (dispatch)=>{
-        axios.get('/api/headerList.json').then((res)=>{
+        axios.get('https://www.easy-mock.com/mock/5d78990220e12a74f8e15405/headerList').then((res)=>{
             const data = res.data;
             dispatch(changeList(data.data))
         })

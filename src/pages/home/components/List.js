@@ -1,4 +1,7 @@
 import React, { Component ,Fragment} from 'react';
+import { connect } from 'react-redux';
+import { actionCreators } from '../store'
+import store from '../../../store'
 
 class List extends Component {
     constructor(props) {
@@ -6,23 +9,58 @@ class List extends Component {
         this.state = {  }
     }
     render() { 
+        const {articleList} = this.props;
         return ( 
-            <Fragment>
-                <div>
-                    <ul>
-                        <li>
-                            <h2>公告：关于暂停用户发布功能，并全面清查平台内容</h2>
-                            <p>亲爱的简书用户 「简书」因个别上传作品用户违反《中华人民共和国网络安全法》《互联网信息服务管理办法》《互联网新闻信息服务管理规定》《互联网用户公...</p>
-                            <p><span>4548</span><span>简书</span><span>7951</span></p>
-                        </li>
-                    </ul>
-                    
-                </div>
+            <Fragment>   
+                <ul className='article-list'>
+                    {
+                       articleList.map((item)=>{
+                           return(
+                            <li className='article-item' key={item.id}>
+                                <div className='article-z'>
+                                    <h3 className='article-title'>{item.title}</h3>
+                                    <p className='article-desc'>{item.desc}</p>
+                                    <p className='article-row'>
+                                        <i className='iconfont icon-right icon-red icon'>&#xe621;</i><span className='span-r-10 icon-red'>{item.bestnum}</span>
+                                        <span className='span-r-10 icon-gray'>{item.name}</span>
+                                        <i className='iconfont icon-right icon-gray icon'>&#xe602;</i><span className='span-r-10 icon-gray'>{item.likenum}</span>
+                                        <i className='iconfont icon-right icon-gray icon-s'>&#xe611;</i><span className='icon-gray'>{item.moneynum}</span>
+                                    </p>
+                                </div>
+                                <div className='article-y'>
+                                    <img src={item.imgUrl} alt=""/>
+                                </div>
+                            </li>
+                           )
+                       }) 
+                    }
+                </ul>                    
             </Fragment>
          );
     }
+
+    componentDidMount(){
+        const action = actionCreators.articleListAction();
+        store.dispatch(action);
+        
+    }
 }
- 
-export default List;
+
+const mapStateToProps=(state)=>{
+    return {
+        articleList:state.home.articleList
+    }
+}
+
+const mapDispatchToProps=(dispatch)=>{
+    return {
+
+    }
+}
+
+
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(List);
 
 

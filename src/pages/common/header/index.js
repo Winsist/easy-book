@@ -26,7 +26,7 @@ class Header extends Component {
                     <div className='search-tips-top clearfix'>
                         <span className='hot-search'>热门搜索</span>
                         <span className='change-item' onClick={()=>{changePage(page,totalPage)}}>换一批</span>
-                        <i className='iconfont icon-right' style={{float:'right',"lineHeight":'20px'}}>&#xe718;</i>
+                        <i className='iconfont icon-right' style={{float:'right',"lineHeight":'20px'}}>&#xe746;</i>
                     </div>
                     <ul className='search-tips-bottom'>
                         {pageList}
@@ -69,7 +69,7 @@ class Header extends Component {
                         </li>
                         <li className='right login'>登录</li>
                         <li className='right zuan'>
-                            <img src={require('../../../statics/images/zuan.png')} />
+                            <img src={require('../../../statics/images/zuan.png')} alt=""/>
                         </li>
                         <li className='right word'>Aa</li>
                     </ul>

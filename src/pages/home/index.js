@@ -1,6 +1,8 @@
 import React, { Component ,Fragment} from 'react';
 import '../../style/home.less'
 import List from './components/List'
+import Recommend from './components/Recommend'
+import Writer from './components/Writer'
 
 class Home extends Component {
     constructor(props) {
@@ -14,7 +16,10 @@ class Home extends Component {
                     <div className='left'>
                         <List/>
                     </div>
-                    <div className='right'>right</div>
+                    <div className='right'>
+                        <Recommend />
+                        <Writer />
+                    </div>
                 </div>
             </Fragment>
          );

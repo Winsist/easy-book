@@ -12,6 +12,7 @@ function App(){
       <Provider store={store}>
         <div>
           <Header />
+          <Home />
           <Router>
             <div>
               <Route path="/" exact component={Home}/>
