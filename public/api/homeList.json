@@ -54,6 +54,57 @@
         "likenum":1554,
         "moneynum":1,
         "imgUrl":"//upload-images.jianshu.io/upload_images/5412749-7dca779718cd3d09.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+    }],
+    "writerList":[{
+        "id":1,
+        "imgUrl":"//upload.jianshu.io/users/upload_avatars/4263857/34d7b217-7338-48fe-81a1-98367fecdbee.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+        "name":"王小麦",
+        "desc":"写了13.5k字 40.2k喜欢"
+    },{
+        "id":2,
+        "imgUrl":"//upload.jianshu.io/users/upload_avatars/301940/189d69dd-af7c-4290-9e2c-89e98acf3603.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+        "name":"梦云小小w",
+        "desc":"写了13.5k字 40.2k喜欢"
+    },{
+        "id":3,
+        "imgUrl":"//upload.jianshu.io/users/upload_avatars/2558050/7761b285-2805-4534-9870-ba7dcc7538ec.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+        "name":"小飞",
+        "desc":"写了13.5k字 40.2k喜欢"
+    },{
+        "id":4,
+        "imgUrl":"//upload.jianshu.io/users/upload_avatars/14715425/e0668349-8c75-43db-8a9d-c388e5f00d0d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+        "name":"大白",
+        "desc":"写了13.5k字 40.2k喜欢"
+    },{
+        "id":5,
+        "imgUrl":"//upload.jianshu.io/users/upload_avatars/3136195/484e32c3504a.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+        "name":"秀秀",
+        "desc":"写了13.5k字 40.2k喜欢"
+    },{
+        "id":6,
+        "imgUrl":"//upload.jianshu.io/users/upload_avatars/13213889/7314c5cc-ca7f-4542-b914-2c8dffaf324d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+        "name":"梅适英",
+        "desc":"写了13.5k字 40.2k喜欢"
+    },{
+        "id":7,
+        "imgUrl":"//upload.jianshu.io/users/upload_avatars/4263857/34d7b217-7338-48fe-81a1-98367fecdbee.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+        "name":"阿栈",
+        "desc":"写了13.5k字 40.2k喜欢"
+    },{
+        "id":8,
+        "imgUrl":"//upload.jianshu.io/users/upload_avatars/2594450/a5bbf755-a88e-42da-9eb7-eb4c0e895683.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+        "name":"泸路说",
+        "desc":"写了13.5k字 40.2k喜欢"
+    },{
+        "id":9,
+        "imgUrl":"//upload.jianshu.io/users/upload_avatars/4263857/34d7b217-7338-48fe-81a1-98367fecdbee.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+        "name":"梁酱",
+        "desc":"写了13.5k字 40.2k喜欢"
+    },{
+        "id":10,
+        "imgUrl":"//upload.jianshu.io/users/upload_avatars/4790772/388e473c-fe2f-40e0-9301-e357ae8f1b41.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+        "name":"皮卡皮卡",
+        "desc":"写了13.5k字 40.2k喜欢"
     }]
 }
 

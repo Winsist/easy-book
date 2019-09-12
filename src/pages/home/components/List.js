@@ -9,14 +9,14 @@ class List extends Component {
         this.state = {  }
     }
     render() { 
-        const {articleList} = this.props;
+        const {articleList,loadMore,page} = this.props;
         return ( 
             <Fragment>   
                 <ul className='article-list'>
                     {
-                       articleList.map((item)=>{
+                       articleList.map((item,index)=>{
                            return(
-                            <li className='article-item' key={item.id}>
+                            <li className='article-item' key={index}>
                                 <div className='article-z'>
                                     <h3 className='article-title'>{item.title}</h3>
                                     <p className='article-desc'>{item.desc}</p>
@@ -34,27 +34,35 @@ class List extends Component {
                            )
                        }) 
                     }
-                </ul>                    
+                </ul> 
+                <div className="load-more" onClick={()=>{loadMore(page)}}>阅读更多</div> 
+                <div className="self-desc">
+                    <p className="about">关于简书 · 联系我们 · 加入我们 · 简书出版 · 品牌与徽标 · 帮助中心 · 合作伙伴</p>
+                    <p className="mengyun">©2019.9.12 梦云小小w / 仿简书 / 来自一个可爱热情开朗美丽的前端渣渣~ ❥(^_-)</p>
+                </div>                  
             </Fragment>
          );
     }
 
     componentDidMount(){
-        const action = actionCreators.articleListAction();
+        const action = actionCreators.homeListAction();
         store.dispatch(action);
-        
     }
 }
 
 const mapStateToProps=(state)=>{
     return {
-        articleList:state.home.articleList
+        articleList:state.home.articleList,
+        page:state.home.page,
     }
 }
 
 const mapDispatchToProps=(dispatch)=>{
     return {
-
+        loadMore(page){
+            const action = actionCreators.articleListAction(page+1);
+            dispatch(action);
+        }
     }
 }
 

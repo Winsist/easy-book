@@ -12,11 +12,11 @@ function App(){
       <Provider store={store}>
         <div>
           <Header />
-          <Home />
+          {/* <Home /> */}
           <Router>
             <div>
               <Route path="/" exact component={Home}/>
-              <Route path="/detail" exact component={Detail}/>
+              <Route path="/detail" component={Detail}/>
             </div>
           </Router>
         </div>

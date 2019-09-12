@@ -1,4 +1,7 @@
 import React, { Component,Fragment } from 'react';
+import { connect } from 'react-redux';
+import { actionCreators } from '../store'
+import store from '../../../store'
 
 class Writer extends Component {
     constructor(props) {
@@ -6,6 +9,7 @@ class Writer extends Component {
         this.state = {  }
     }
     render() { 
+        const {writerList} = this.props;
         return ( 
              <Fragment>
                  <div className="writers">
@@ -17,29 +21,45 @@ class Writer extends Component {
                         </span> 
                     </div>
                     <ul className="writer-list">
-                        <li className="writer-item">
-                            <a href='/'><img className="writer-pic" src="//upload.jianshu.io/users/upload_avatars/52841/251f5481-67b6-4bf0-86f4-faac9768beb3.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp" /></a>
-                            <p className="writer-name">梦云小小w</p><br/>
-                            <p className="writer-desc">写了13.5k字 40.2k喜欢</p>
-                            <span className='focus-people'>
-                                <i className='iconfont icon-right icon add'>&#xe624;</i>
-                                <span className="focus">关注</span>
-                            </span>
-                        </li>
-                        <li className="writer-item">
-                            <a href='/'><img className="writer-pic" src="//upload.jianshu.io/users/upload_avatars/52841/251f5481-67b6-4bf0-86f4-faac9768beb3.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp" /></a>
-                            <p className="writer-name">梦云小小w</p><br/>
-                            <p className="writer-desc">写了13.5k字 40.2k喜欢</p>
-                            <span className='focus-people'>
-                                <i className='iconfont icon-right icon add'>&#xe624;</i>
-                                <span className="focus">关注</span>
-                            </span>
-                        </li>
+                        {
+                          writerList.map((item)=>{
+                              return(
+                                <li className="writer-item" key={item.id}>
+                                    <a href='/'><img className="writer-pic" src={item.imgUrl} alt=""/></a>
+                                    <p className="writer-name">{item.name}</p><br/>
+                                    <p className="writer-desc">{item.desc}</p>
+                                    <span className='focus-people'>
+                                        <i className='iconfont icon-right icon add'>&#xe624;</i>
+                                        <span className="focus">关注</span>
+                                    </span>
+                                </li>
+                              )
+                          })  
+                        }
+                        
                     </ul>
+                    <div className="btn-all">查看全部 <i className='iconfont icon'>&#xe615;</i></div>
                  </div>
              </Fragment>
          );
     }
+    componentDidMount(){
+        const action = actionCreators.homeListAction();
+        store.dispatch(action);
+    }
+}
+
+
+const mapStateToProps=(state)=>{
+    return {
+        writerList:state.home.writerList
+    }
+}
+
+const mapDispatchToProps=(dispatch)=>{
+    return {
+
+    }
 }
  
-export default Writer;
+export default connect(mapStateToProps,mapDispatchToProps)(Writer);
