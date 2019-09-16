@@ -3,13 +3,15 @@ import axios from 'axios';
 
 const getHomeList = (data) => ({
     type:actionTypes.GETHOME_LIST,
-    data
+    data,
+    writersTotalPage:Math.ceil(data.writerList.length/5)
 })
 
 const getarticleList = (data,newpage) => ({
     type:actionTypes.GETARTICLE_LIST,
     data,
-    newpage
+    newpage,
+    
 })
 
 export const homeListAction = ()=>{
@@ -31,3 +33,19 @@ export const articleListAction = (page)=>{
         })
     }
 }
+
+export const changePageAction = (writersPage)=> ({
+    type:actionTypes.CHANGE_PAGE,
+    writersPage
+})
+
+export const showCodeAction = ()=> ({
+    type:actionTypes.SHOW_CODE,
+    show:true
+})
+
+export const hideCodeAction = ()=> ({
+    type:actionTypes.HIDE_CODE,
+    show:false
+})
+

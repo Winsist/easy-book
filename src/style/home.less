@@ -74,6 +74,7 @@
         float: right;
         width: 280px;
         .board{
+            margin-bottom: 5px;
             .board-pic{
                 width: 100%;
                 margin-bottom: 5px;
@@ -106,6 +107,22 @@
                     left: 100px;
                     color: #999;
                     font-size: 13px;
+                }
+            }
+            .bigpic-wrapper{
+                background: #fff;
+                padding: 8px 8px 0;
+                border:1px solid #000;
+                position: absolute;
+                left: 50px;
+                top: -173px;
+                display: none;
+                &.show{
+                    display: block
+                }
+                .big-code-pic{
+                    width: 160px;
+                    height: 160px;
                 }
             }
         }

@@ -11,9 +11,9 @@ class Home extends Component {
         this.state = {  }
     }
 
-    scrollToTop(){
-        window.onscroll(0,0)
-    }
+    // scrollToTop(){
+    //     window.onscroll(0,0)
+    // }
 
 
     render() { 
@@ -28,7 +28,7 @@ class Home extends Component {
                         <Writer />
                     </div>
                 </div>
-                <div className="scrollTop" onClick={this.scrollToTop()}>
+                <div className="scrollTop">
                     <i className="iconfont">&#xe604;</i>
                 </div>
                 <p className="scroll-text">回到顶部</p>

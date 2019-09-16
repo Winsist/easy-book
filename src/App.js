@@ -5,6 +5,7 @@ import {BrowserRouter as Router ,Route} from 'react-router-dom'
 import { Provider } from 'react-redux'
 import Home from './pages/home'
 import Detail from './pages/detail'
+import RecommendWriters from './pages/writers'
 
 
 function App(){
@@ -17,6 +18,7 @@ function App(){
             <div>
               <Route path="/" exact component={Home}/>
               <Route path="/detail" component={Detail}/>
+              <Route path="/recommendwriters" component={RecommendWriters}/>
             </div>
           </Router>
         </div>

@@ -1,0 +1,113 @@
+.r-writers{
+    width: 960px;
+    margin: 0 auto;
+    padding: 30px 0 50px;
+    overflow: hidden;
+    .w-pic-wrapper{
+        position: relative;
+        .w-pic{
+            width: 100%;
+        }
+        .how-do{
+            position: absolute;
+            right: 30px;
+            top: 40px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 17px;
+        }
+    }
+    .list{
+        margin-left: -15px;
+        margin-right: -15px;
+        overflow: hidden;
+        .item{
+            width: 33.33%;
+            position: relative;
+            text-align: center;
+            float: left;
+            padding: 0 15px;
+            box-sizing: border-box;
+            .item-wrapper{
+                height: 320px;
+                margin-top: 80px;
+                background-color: hsla(0,0%,71%,.1);
+                border: 1px solid #e6e6e6;
+                border-radius: 4px;
+                text-align: center;
+                padding: 0 20px;
+                box-sizing: border-box;
+                transition: all .5s ease;
+                &:hover{
+                    box-shadow: 0 0 20px #ccc;
+                    transition: all .3s ease;
+                }
+                .avatar{
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%; 
+                    position: absolute;
+                    top: 40px; 
+                    left: 50%;
+                    margin-left: -40px;
+                    margin-bottom: 10px;
+                }
+                .name{
+                    font-size: 21px;
+                    font-weight: 700;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    margin-top: 50px;
+                    margin-bottom: 10px;
+                }
+                .desc{
+                    max-width: 180px;
+                    min-height: 50px;
+                    font-size: 13px;
+                    line-height: 25px;
+                    margin: 0 auto;
+                }
+                .w-foucs{
+                   width: 100px;
+                   padding: 8px 0 ;
+                   height: 24px;
+                   line-height: 24px;
+                   border-radius: 20px;
+                   background: #42c02e;
+                   color: #fff;
+                   font-size: 16px;
+                   margin: 10px auto 20px;
+                }
+                .meta{
+                    float: left;
+                    font-size: 12px;
+                    color: #969696;
+                    background: #f8f8f8;
+                    padding: 2px 5px;
+                    margin-top: -10px;
+                    // margin-left: 15px;
+                }
+                hr{
+                    border:0;
+                    border-top: 1px solid #eee;
+                    margin-bottom: 20px;
+                }
+                .recent-update{
+                    min-height: 75px;
+                    color: #333;
+                    .new{
+                        font-size: 13px;
+                        line-height: 25px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        cursor: pointer;
+                        color: #333;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
