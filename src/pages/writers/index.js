@@ -10,6 +10,25 @@ class RecommendWriters extends Component {
         super(props);
         this.state = {  }
     }
+    // getSex(){
+    //     const newList = this.props.list;
+    //     console.log(newList);
+        
+    //     for(let i = 0;i<newList.length;i++){
+            
+    //         if(newList[i].sex===1){//女
+                
+    //             return(
+    //                 <i className="iconfont woman">&#xe620;</i>
+    //             )
+    //         }else{//男
+    //             return(
+    //                 <i className="iconfont man">&#xe835;</i>
+    //             )
+    //         }
+    //     }
+        
+    // }
     render() { 
         return ( 
             <Fragment>
@@ -17,7 +36,7 @@ class RecommendWriters extends Component {
                     <div className="w-pic-wrapper">
                         <img src="//cdn2.jianshu.io/assets/web/recommend-author-03cc8798d5cc3f986e49cbcb2eb63079.png" 
                         className="w-pic" alt="" />
-                        <span className="how-do">如何成为签约作者？</span>
+                        <span className="how-do"><i className="iconfont">&#xe719;</i>如何成为签约作者？</span>
                     </div>
                     <ul className="list">
                         {
@@ -27,7 +46,10 @@ class RecommendWriters extends Component {
                                         <div className="item-wrapper">
                                             <img src={item.avatar} className="avatar" alt="" />
                                             <h4 className="name">
-                                                {item.name} <i className="iconfont">&#xe602;</i>
+                                                {item.name} 
+                                                
+                                                
+                                                <i className={item.sex===1?'iconfont woman':'iconfont man'}>{item.sex===1?'\ue620':'\ue835'}</i>
                                             </h4>
                                             <p className="desc">{item.desc}</p>
                                             <div className="w-foucs"><i className="iconfont">&#xe603;</i> 关注</div>
@@ -45,6 +67,7 @@ class RecommendWriters extends Component {
                         }
                         
                     </ul>
+                    <div className="load-more">加载更多</div>
                 </div>
             </Fragment>
          );
