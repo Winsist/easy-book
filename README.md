@@ -133,3 +133,25 @@ import { CSSTransition } from 'react-transition-group'
 4、避免无意义的axios请求，性能优化
 
 本来搜索框点击一次，发一次请求，点击一次，发一次请求，但是实际上，点击第一次的时候发送请求，第二次点的时候我不希望再发送这种没有必要的请求了，那就在聚焦的时候，传一个list,如果list.length===0,那么就发送请求。
+
+
+5、在jsx中的三元表达式中使用iconfont会有问题
+
+错误写法：
+
+```
+<i className={item.sex===1?'iconfont woman':'iconfont man'}>{item.sex===1?'&#xe620;':'&#xe835;'}</i>
+
+```
+
+如果如上写的话，不会显示字体图标，会直接显示&#xe620;与&#xe835; 这样的字体编码 。
+
+原因：字体编码后面四位是Unicode编码，想使用字符串来传递的话，只要将&#xe620;改成 \ue620即可
+
+正确写法：
+
+```
+<i className={item.sex===1?'iconfont woman':'iconfont man'}>{item.sex===1?'\ue620':'\ue835'}</i>
+
+```
+
