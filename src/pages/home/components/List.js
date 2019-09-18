@@ -1,12 +1,18 @@
 import React, { Component ,Fragment} from 'react';
 import { connect } from 'react-redux';
 import { actionCreators } from '../store'
-import store from '../../../store'
 
 class List extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
+    }
+    shouldComponentUpdate(nextProps,nextState){
+        if(nextProps.content!==this.props.content){
+            return false;
+        }else{
+            return true;
+        }
     }
     render() { 
         const {articleList,loadMore,page} = this.props;
@@ -45,8 +51,7 @@ class List extends Component {
     }
 
     componentDidMount(){
-        const action = actionCreators.homeListAction();
-        store.dispatch(action);
+        this.props.getHomeList();
     }
 }
 
@@ -59,6 +64,10 @@ const mapStateToProps=(state)=>{
 
 const mapDispatchToProps=(dispatch)=>{
     return {
+        getHomeList(){
+            const action = actionCreators.homeListAction();
+            dispatch(action);
+        },
         loadMore(page){
             const action = actionCreators.articleListAction(page+1);
             dispatch(action);

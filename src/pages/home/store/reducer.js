@@ -6,7 +6,9 @@ const defaultState={
     page:1,
     writersPage:1,
     writersTotalPage:1,
-    show:false
+    show:false,
+    showScroll:false,
+    showtext:false
 }
 
 export default (state=defaultState,action)=>{
@@ -39,6 +41,22 @@ export default (state=defaultState,action)=>{
         newState.show=action.show;
         return newState;
     }
+    if(action.type===actionTypes.SHOW_SCROLL){
+        const newState=JSON.parse(JSON.stringify(state));
+        newState.showScroll=action.showscroll;
+        return newState;
+    }
+    if(action.type===actionTypes.SHOW_TEXT){
+        const newState=JSON.parse(JSON.stringify(state));
+        newState.showtext=action.showtext;
+        return newState;
+    }
+    if(action.type===actionTypes.HIDE_TEXT){
+        const newState=JSON.parse(JSON.stringify(state));
+        newState.showtext=action.showtext;
+        return newState;
+    }
+  
 
     return state;
 }

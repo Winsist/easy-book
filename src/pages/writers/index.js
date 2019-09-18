@@ -10,26 +10,17 @@ class RecommendWriters extends Component {
         super(props);
         this.state = {  }
     }
-    // getSex(){
-    //     const newList = this.props.list;
-    //     console.log(newList);
-        
-    //     for(let i = 0;i<newList.length;i++){
-            
-    //         if(newList[i].sex===1){//女
-                
-    //             return(
-    //                 <i className="iconfont woman">&#xe620;</i>
-    //             )
-    //         }else{//男
-    //             return(
-    //                 <i className="iconfont man">&#xe835;</i>
-    //             )
-    //         }
-    //     }
-        
-    // }
+    
+    shouldComponentUpdate(nextProps,nextState){
+        if(nextProps.content!==this.props.content){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    
     render() { 
+        const {list,loadMore,page} = this.props;
         return ( 
             <Fragment>
                 <div className="r-writers">
@@ -40,7 +31,7 @@ class RecommendWriters extends Component {
                     </div>
                     <ul className="list">
                         {
-                            this.props.list.map((item,index)=>{
+                            list.map((item,index)=>{
                                 return(
                                     <li className="item" key={index}>
                                         <div className="item-wrapper">
@@ -67,7 +58,7 @@ class RecommendWriters extends Component {
                         }
                         
                     </ul>
-                    <div className="load-more">加载更多</div>
+                    <div className="load-more" onClick={()=>loadMore(page)}>加载更多</div>
                 </div>
             </Fragment>
          );
@@ -81,13 +72,17 @@ class RecommendWriters extends Component {
 
 const mapStateToProps = (state)=>{
     return{
-        list:state.writers.list
+        list:state.writers.list,
+        page:state.writers.page
     }
 }
 
 const mapDisPatchToProps = (dispatch)=>{
     return{
-        
+        loadMore(page){
+            const action = actionCreators.getListMoreAction(page+1);
+            dispatch(action);
+        }
     }
 }
 

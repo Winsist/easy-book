@@ -5,6 +5,13 @@ class Detail extends Component {
         super(props);
         this.state = {  }
     }
+    shouldComponentUpdate(nextProps,nextState){
+        if(nextProps.content!==this.props.content){
+            return false;
+        }else{
+            return true;
+        }
+    }
     render() { 
         return ( 
             <div>detail</div>

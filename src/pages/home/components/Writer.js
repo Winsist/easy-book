@@ -1,12 +1,20 @@
 import React, { Component,Fragment } from 'react';
 import { connect } from 'react-redux';
 import { actionCreators } from '../store'
-import store from '../../../store'
+import { Link } from 'react-router-dom'
+
 
 class Writer extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
+    }
+    shouldComponentUpdate(nextProps,nextState){
+        if(nextProps.content!==this.props.content){
+            return false;
+        }else{
+            return true;
+        }
     }
 
     getWriters(){
@@ -49,18 +57,17 @@ class Writer extends Component {
                     {
                         this.getWriters()
                     }
-                    <div className="btn-all">
-                        <a href="/recommendwriters">
-                            查看全部 <i className='iconfont icon'>&#xe615;</i>
-                        </a>
-                    </div>
+                    <Link to="/recommendwriters">
+                        <div className="btn-all">
+                            <span>查看全部 <i className='iconfont icon'>&#xe615;</i></span>
+                        </div>
+                    </Link>
                  </div>
              </Fragment>
          );
     }
     componentDidMount(){
-        const action = actionCreators.homeListAction();
-        store.dispatch(action);
+        this.props.getHomeListAction()
     }
 }
 
@@ -75,6 +82,10 @@ const mapStateToProps=(state)=>{
 
 const mapDispatchToProps=(dispatch)=>{
     return {
+        getHomeListAction(){
+            const action = actionCreators.homeListAction();
+            dispatch(action);
+        },
         changeWriter(writersPage,writersTotalPage){
             if(writersPage<writersTotalPage){
                 writersPage=writersPage+1;

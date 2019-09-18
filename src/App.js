@@ -11,17 +11,14 @@ import RecommendWriters from './pages/writers'
 function App(){
   return ( 
       <Provider store={store}>
-        <div>
-          <Header />
-          {/* <Home /> */}
-          <Router>
-            <div>
-              <Route path="/" exact component={Home}/>
-              <Route path="/detail" component={Detail}/>
-              <Route path="/recommendwriters" component={RecommendWriters}/>
-            </div>
-          </Router>
-        </div>
+        <Router>
+          <div>
+            <Header />
+            <Route path="/" exact component={Home}/>
+            <Route path="/detail" component={Detail}/>
+            <Route path="/recommendwriters" component={RecommendWriters}/>
+          </div>
+        </Router>
       </Provider>
      );
 }

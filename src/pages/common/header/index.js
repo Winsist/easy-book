@@ -3,12 +3,20 @@ import '../../../style/header.less'
 import { CSSTransition } from 'react-transition-group'
 import { connect } from 'react-redux'
 import { actionCreators } from './store'
+import { Link } from 'react-router-dom'
 
 
 class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
+    }
+    shouldComponentUpdate(nextProps,nextState){
+        if(nextProps.content!==this.props.content){
+            return false;
+        }else{
+            return true;
+        }
     }
     getListArea(){
         const {focus,mouseIn,list,page,totalPage,changePage}=this.props;
@@ -41,9 +49,9 @@ class Header extends Component {
 
             <Fragment>
                 <div className="header">
-                    <a href='/'>
+                    <Link to='/'>
                         <img src={require('../../../statics/images/logo.png')} alt='logo' className='logo'/>
-                    </a>
+                    </Link>
                     <ul className='header-list'>
                         <li className='left home'><i className='iconfont icon-right'>&#xe6fd;</i>首页</li>
                         <li className='left download'><i className='iconfont icon-right'>&#xe601;</i>下载App</li>

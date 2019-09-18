@@ -7,6 +7,13 @@ class Recommend extends Component {
         super(props);
         this.state = {  }
     }
+    shouldComponentUpdate(nextProps,nextState){
+        if(nextProps.content!==this.props.content){
+            return false;
+        }else{
+            return true;
+        }
+    }
     render() { 
         const {showCode,hideCode,show} =this.props;
         return ( 

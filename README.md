@@ -155,3 +155,20 @@ import { CSSTransition } from 'react-transition-group'
 
 ```
 
+6、当我在home组件中使用react-redux时，会报错，mapStateToProps重复定义了，然后我改了一个名字页面就可以正常显示了，子组件也用了同样的名字，但是还是不理解为什么不可以跟子组件一样的名字。
+
+7、为了避免组件做无意义的渲染，我需要优化
+
+因为数据都是放在store里面，只要有数据变化，render就会执行，比如List组件的数据改变，Writer组件的数据没有改变，但是页面的render函数也会被重新执行，所以需要一个生命周期函数来优化
+
+```
+shouldComponentUpdate(nextProps,nextState){
+    if(nextProps.content!==this.props.content){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+```
+

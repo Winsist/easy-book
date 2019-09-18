@@ -49,3 +49,22 @@ export const hideCodeAction = ()=> ({
     show:false
 })
 
+export const toggleScrollAction = (showscroll)=> ({
+    type:actionTypes.SHOW_SCROLL,
+    showscroll
+})
+
+export const showTextAction = ()=> ({
+    type:actionTypes.SHOW_TEXT,
+    showtext:true
+})
+
+export const hideTextAction = ()=> ({
+    type:actionTypes.HIDE_TEXT,
+    showtext:false
+})
+
+
+
+
+
