@@ -172,3 +172,8 @@ shouldComponentUpdate(nextProps,nextState){
 
 ```
 
+
+8、页面路由参数传递的两种方式
+
+（1）detail/:id     动态路由
+

@@ -75,7 +75,10 @@ class Header extends Component {
                                 
                             </div>
                         </li>
-                        <li className='right login'>登录</li>
+                        <Link to="/login">
+                            <li className='right login'>登录</li>
+                        </Link>
+                        
                         <li className='right zuan'>
                             <img src={require('../../../statics/images/zuan.png')} alt=""/>
                         </li>
