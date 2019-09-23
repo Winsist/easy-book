@@ -4,6 +4,7 @@ import { CSSTransition } from 'react-transition-group'
 import { connect } from 'react-redux'
 import { actionCreators } from './store'
 import { Link } from 'react-router-dom'
+import { actionCreators as loginActionCreators } from '../../login/store'
 
 
 class Header extends Component {
@@ -43,6 +44,22 @@ class Header extends Component {
             )
         }
     }
+    isLogin(){
+        if(this.props.loginStatus){
+            return  (
+                <Link to="/">
+                    <li className='right login' onClick={this.props.outLogin}>退出</li>
+                </Link>
+            )
+        }else{
+            return  (
+                <Link to="/login">
+                    <li className='right login'>登录</li>
+                </Link>
+            )
+        }
+    }
+    
     render() { 
         const {focus,focusInput,blurInput,list,mouseIn,mouseInBox,mouseOutBox} = this.props;
         return ( 
@@ -75,16 +92,18 @@ class Header extends Component {
                                 
                             </div>
                         </li>
-                        <Link to="/login">
-                            <li className='right login'>登录</li>
-                        </Link>
                         
+                        {this.isLogin()}
+ 
                         <li className='right zuan'>
                             <img src={require('../../../statics/images/zuan.png')} alt=""/>
                         </li>
                         <li className='right word'>Aa</li>
                     </ul>
-                    <a href='/' className='write'><i className='iconfont'>&#xe616;</i> 写文章</a>
+                    <Link to="/writebook">
+                        <span className='write'><i className='iconfont'>&#xe616;</i> 写文章</span>
+                    </Link>
+                    
                     <a href='/' className='register'>注册</a>
                 </div>
             </Fragment>
@@ -100,6 +119,7 @@ const mapStateToProps = (state) =>{
         mouseIn:state.header.mouseIn,
         page:state.header.page,
         totalPage:state.header.totalPage,
+        loginStatus:state.login.loginStatus
     }
 }
 
@@ -135,6 +155,10 @@ const mapDispatchToProps = (dispatch) =>{
                 dispatch(action)
             }
             
+        },
+        outLogin(){
+            const action =loginActionCreators.logOut();
+            dispatch(action)
         }
     }
 }
