@@ -80,6 +80,10 @@ class Detail extends Component {
                             </div>
                         </div>
                     </div>
+                    <div className='up-num'>
+                        <div className='up-num-wrap'><i className='iconfont up'>&#xe600;</i></div>
+                        <div>4525赞</div>
+                    </div>
                 </div>
             </Fragment>
          );

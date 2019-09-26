@@ -1,17 +1,30 @@
 .detail-body{
     width: 100%;
-    height: auto;
+    // height: 200px;
     background: #f9f9f9; 
+    padding-top: 10px;
+    padding-bottom: 20px;
+    &::after{
+        content:'';
+        display: block;
+        clear: both;
+    }
     .detail-main{
         width:1000px;
         margin: 0px auto;
-        background: #fff;
+        &::after{
+            content:'';
+            display: block;
+            clear: both;
+        }
         .detail-left{
             width:730px;
-            height: 200px;
+            // height: 200px;
             float: left;
             padding: 24px;
             box-sizing: border-box;
+            background: #fff;
+            box-shadow: 0 0 8px rgba(0,0,0,.1);
             .title{
                 font-size: 30px;
                 font-weight: 700;
@@ -42,6 +55,11 @@
             .idea{
                 font-size: 14px;
                 cursor: pointer;
+                &::after{
+                    content:'';
+                    display: block;
+                    clear: both;
+                }
                 .idea-z{
                     float: left;
                     color: #969696;
@@ -91,6 +109,8 @@
         }
         .detail-right{
             width:260px;
+            background: #fff;
+            box-shadow: 0 0 8px rgba(0,0,0,.1);
             // height: 200px;
             float: right;
             box-sizing: border-box;
@@ -158,6 +178,29 @@
                         }
                     }
                 }
+            }
+        }
+    }
+    .up-num{
+        position: fixed;
+        top: 220px;
+        left: 130px;
+        color: #969696;
+        font-size: 14px;
+        .up-num-wrap{
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            color: #969696;
+            font-size: 20px;
+            background: #fff;
+            box-shadow: 0 0 8px rgba(0,0,0,.1);
+            margin-bottom: 10px;
+            .up{
+                font-size: 20px;
             }
         }
     }
